@@ -48,7 +48,7 @@ myalert.launch({
 * **msgs:** Corresponde a los mensajes que mostrará la alerta.
 
 > [!TIP]
-> Para personalizar los íconos puede pasarle iconos svg como iconos de cualquier librería de íconos. En el último caso deberá tener la librería previamente importada en su HTML
+> Para personalizar los íconos puede pasarle iconos svg como iconos de cualquier librería de íconos. En el último caso deberá tener la librería de íconos previamente importada en su HTML
 
 ## Pautas de constribución
 
