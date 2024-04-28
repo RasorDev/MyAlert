@@ -57,7 +57,7 @@
 .sweetie-hide{
     animation-name: sweetie-hide;
     animation-duration: .2s;
-    animation-direction: forwards
+    animation-fill-mode: forwards;
 }
 
 @keyframes sweetie-hide{
