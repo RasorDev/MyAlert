@@ -24,7 +24,7 @@ Para comenzar a utilizar MyAlert en tu proyecto, sigue estos pasos:
 ```
 ## USO 
 
-Para crear y personalizar tu alerta, utiliza el siguiente código en crea un script JavaScript con el siguiente código:
+Para crear y personalizar tu alerta, utiliza el siguiente código en un script JavaScript:
 
 ```js
 const myalert = new MyAlert();
@@ -48,7 +48,7 @@ myalert.launch({
 * **msgs:** Corresponde a los mensajes que mostrará la alerta.
 
 > [!TIP]
-> Para personalizar los íconos puede pasarle iconos svg como iconos de cualquier librería de íconos. En el último casi deberá tener la librería previamente importada en su HTML
+> Para personalizar los íconos puede pasarle iconos svg como iconos de cualquier librería de íconos. En el último caso deberá tener la librería previamente importada en su HTML
 
 ## Pautas de constribución
 
