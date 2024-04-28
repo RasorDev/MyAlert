@@ -6,14 +6,14 @@
 
 Aquí tienes una vista previa de cómo se verían las diferentes alertas personalizadas utilizando MyAlert:
 
-![succes](readme-img/success.png) ![info](readme-img/info.png) ![question](readme-img/question.png)
+![success](readme-img/success.png) ![info](readme-img/info.png) ![question](readme-img/question.png)
 ![notify](readme-img/notify.png) ![warning](readme-img/warning.png) ![error](readme-img/error.png)
 
 ## Instalación
 
 Para comenzar a utilizar MyAlert en tu proyecto, sigue estos pasos:
 
-1. Copia los archivos [myalert.js](myalert.js) y [myalert.js](myalert.css) en la carpeta de tu proyecto.
+1. Copia los archivos [myalert.js](myalert.js) y [myalert.css](myalert.css) en la carpeta de tu proyecto.
 2. Importa los archivos en tu HTML:
 
 ```html
@@ -22,7 +22,7 @@ Para comenzar a utilizar MyAlert en tu proyecto, sigue estos pasos:
 <!-- JS -->
 <script src="myalert.js"></script>
 ```
-## USO 
+## Uso
 
 Para crear y personalizar tu alerta, utiliza el siguiente código en un script JavaScript:
 
@@ -48,9 +48,9 @@ myalert.launch({
 * **msgs:** Corresponde a los mensajes que mostrará la alerta.
 
 > [!TIP]
-> Para personalizar los íconos puede pasarle iconos svg como iconos de cualquier librería de íconos. En el último caso deberá tener la librería de íconos previamente importada en su HTML
+> Para personalizar los íconos puede pasarle íconos svg como íconos de cualquier librería de íconos. En el último caso deberá tener la librería de íconos previamente importada en su HTML
 
-## Pautas de constribución
+## Pautas de contribución
 
 ¡Se permiten las contribuciones al proyecto! Si tienes sugerencias de mejoras, nuevas características o encuentras algún problema, no dudes en abrir un issue o enviar un pull request.
 

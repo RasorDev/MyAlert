@@ -7,8 +7,8 @@ only_show.addEventListener("click", function (e) {
   myalert.launch({    
     title: "MyAlert",
     icon: 'question',
-    //iconcolor: '#2b2b2b',
+    iconcolor: '#2b2b2b',
     subtitle: 'Esto es un subtitulo personalizado.',
-    //msgs: ['mensaje 1', 'mensaje 2', 'mensaje 3']
+    msgs: ['mensaje 1', 'mensaje 2', 'mensaje 3']
   });
 });
