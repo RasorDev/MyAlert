@@ -29,7 +29,7 @@ class MyAlert{
         const alertbox = document.createElement('div');
         alertbox.classList.add('alert-box');
         alertbox.id = "alert-box";
-        const alertbody = this.createAlertBody( params.title, params.icon, params.iconcolor, params.subtitle );
+        const alertbody = this.createAlertBody( params.title, params.icon, params.iconcolor, params.subtitle, params.msgs );
         alertbox.prepend(alertbody);
         const alertfooter = this.createAlertFooter();
         alertbox.appendChild(alertfooter);
@@ -37,7 +37,7 @@ class MyAlert{
         return alertbox
     }
 
-    createAlertBody( title, icon, iconcolor, subtitle ){ // Cuerpo de la alerta
+    createAlertBody( title, icon, iconcolor, subtitle, msgs ){ // Cuerpo de la alerta
         let AlertContainer = '';
         const alertbody = document.createElement('div');
         alertbody.classList.add('alert-body');
@@ -67,7 +67,7 @@ class MyAlert{
             }
 
             let icono = icons[icon] ?? icon;
-            let background = '';
+            var background = '';
             
             iconcolor ? background = iconcolor : background = backgrounds[icon] ?? icon; // Tomamos el color que viene poro parametros o uno predefinido           
             AlertContainer += '<div class="icon"><div class = "backgorund-icon" style = "background-color:'+ background +';">'+ icono +'</div></div>';
@@ -75,6 +75,15 @@ class MyAlert{
 
         if (subtitle) { // Configuramos el subtitulo
             AlertContainer += "<h5>" + subtitle + "</h5>"
+        }
+
+        if (msgs.length > 0) { // Configuramos los mensajes
+            AlertContainer += '<ul>';
+            msgs.forEach(function (element, index) {
+                AlertContainer += '<li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: '+ background +';transform: ;msFilter:;"><path d="M12 5c-3.859 0-7 3.141-7 7s3.141 7 7 7 7-3.141 7-7-3.141-7-7-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"></path><path d="M12 9c-1.627 0-3 1.373-3 3s1.373 3 3 3 3-1.373 3-3-1.373-3-3-3z"></path></svg>' + element + "</li>";
+
+            });
+           AlertContainer += '</ul>';
         }
         
         
@@ -97,19 +106,19 @@ class MyAlert{
     }
 
     launch(options = {}){ // Mostrar las alertas
-        const { title = 'Alerta', icon = '', iconcolor = '', subtitle = '' } = options;
+        const { title = 'Alerta', icon = '', iconcolor = '', subtitle = '', msgs = [] } = options;
 
-        const alertbox = this.createAlertBox({ title, icon, iconcolor, subtitle });
-                
-        this.alertcontainer.style.display = 'flex'
-        this.alertcontainer.prepend(alertbox);
-        document.body.style.overflow = 'hidden';
+        const alertbox = this.createAlertBox({ title, icon, iconcolor, subtitle, msgs });
+        
+        document.getElementsByTagName("body")[0].style.overflow = "hidden";
         this.alertblur.classList.add('blur');
+        this.alertcontainer.prepend(alertbox);
+        this.alertcontainer.style.display = 'flex';
 
         this.alertcontainer.classList.remove("alert_animation_out");
         this.alertcontainer.classList.add('alert_animation_in');
-        alertbox.classList.add('scale_animation');
-
+        alertbox.classList.add('scale_animation');     
+        
         /* Btn Cerrar */ 
         let btn_close = document.getElementById('btn_close');
         btn_close.addEventListener('click', (e) =>{
@@ -120,11 +129,11 @@ class MyAlert{
 
     close(alertbox){
         if (alertbox && this.alertcontainer.contains(alertbox)) {
-            document.body.style.removeProperty('overflow');
+            document.getElementsByTagName("body")[0].style.removeProperty("overflow");
             this.alertblur.classList.remove('blur');
             this.alertcontainer.removeChild(alertbox);
             this.alertcontainer.style.display = 'none';
-
+            
             this.alertcontainer.classList.add("alert_animation_out");
             this.alertcontainer.classList.remove("alert_animation_in");
             alertbox.classList.remove("scale_animation");
