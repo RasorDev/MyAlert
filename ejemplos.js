@@ -33,6 +33,6 @@ function denegar(param){
 
 function cancelar(){
     alert('Cancelar');
-}
+} 
 
 
